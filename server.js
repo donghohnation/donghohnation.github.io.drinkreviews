@@ -3,9 +3,9 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
+// app.use(express.favicon(__dirname + '/public/assets/images/drink_favi.png'));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
