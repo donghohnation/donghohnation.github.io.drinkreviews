@@ -4,38 +4,38 @@
 </div>
 
 <div class="container2">
-  <h2>Add a Burger</h2>
-  <h4>Enter a burger you'd like to eat, and click submit</h4>
+  <h2>Add a drink</h2>
+  <h4>Enter a drink you'd like to eat, and click submit</h4>
   <form class="create-form">
 
-    <p>Burger Name:</p>
+    <p>Drink Name:</p>
     <div class="form-group">
-      <textarea type="text" id="burger" rows="4" name="name" placeholder="WHATS YOUR DRINK"></textarea>
+      <textarea type="text" id="drink" rows="4" name="name" placeholder="WHATS YOUR DRINK"></textarea>
     </div>
 
     <button type="submit" class="form-button">Add My Drink</button>
   </form>
 </div>
 
-<div class="burger-list">
-  {{!-- If devoured returns a falsy value (ie, not yet devoured), Handlebars WILL render burger-block partial, setting devoured to false. 
+<div class="drink-list">
+  {{!-- If devoured returns a falsy value (ie, not yet devoured), Handlebars WILL render drink-block partial, setting devoured to false. 
 Otherwise, it will render nothing. --}}
   <div class="not-devoured">
     <h2>Order Here</h2>
     <ul>
-      {{#each burgers}}
+      {{#each drinks}}
       {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
+      {{> drinks/drink-block devoured=false}}
       {{/unless}}
       {{/each}}
     </ul>
   </div>
-  <div class="devoured-burgers">
-    <h2>Devoured Burgers</h2>
+  <div class="devoured-drinks">
+    <h2>Devoured Drinks</h2>
     <ul>
-      {{#each burgers}}
+      {{#each drinks}}
       {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
+      {{> drinks/drink-block devoured=true}}
       {{/if}}
       {{/each}}
     </ul>
@@ -44,6 +44,6 @@ Otherwise, it will render nothing. --}}
 
 
   {{!-- If devoured is true (eaten), it will render --}}
-  {{!-- <div class="devoured-burgers">
+  {{!-- <div class="devoured-drinks">
     
 </div> --}}

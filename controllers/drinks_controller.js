@@ -3,38 +3,38 @@ const express = require("express");
 // Create the router for the app
 const router = express.Router();
 
-// Import the model (burger_model.js) to use its database functions
-const burger = require("../models/burger_model.js");
+// Import the model (drink_model.js) to use its database functions
+const drink = require("../models/drink_model.js");
 
 // Create routes and set up logic within those routes where required.
 router.get("/", (req, res) => {
 
-  // Call method from burger_model.js
-  burger.all(data => {
-    // Use the database results array from the burgers table using the index.handlebars file
-    res.render("index", { burgers: data });
+  // Call method from drink_model.js
+  drink.all(data => {
+    // Use the database results array from the drinks table using the index.handlebars file
+    res.render("index", { drinks: data });
 
   });
 });
 
-router.post("/api/burgers", (req, res) => {
-  console.log("New burger POST request: ", req.body);
+router.post("/api/drinks", (req, res) => {
+  console.log("New drink POST request: ", req.body);
   // Column names
-  burger.create(["burger_name", "devoured"],
+  drink.create(["drink_name", "devoured"],
     // Properties from object in POST
-    [req.body.burger_name, req.body.devoured], result => {
-      // Send back the ID of the new burger
+    [req.body.drink_name, req.body.devoured], result => {
+      // Send back the ID of the new drink
       res.json({ id: result.insertId });
     });
 });
 
-router.put("/api/burgers/:id", (req, res) => {
+router.put("/api/drinks/:id", (req, res) => {
   console.log("Incoming UPDATE request: ", req.body);
 
   let condition = "id = " + req.params.id;
-  console.log("UPDATE burger WHERE condition: ", condition);
+  console.log("UPDATE drink WHERE condition: ", condition);
 
-  burger.update({
+  drink.update({
     devoured: req.body.devoured
   }, condition, result => {
     if (result.changedRows == 0) {
@@ -46,10 +46,10 @@ router.put("/api/burgers/:id", (req, res) => {
   });
 });
 
-router.delete("/api/burgers/:id", (req, res) => {
+router.delete("/api/drinks/:id", (req, res) => {
   let condition = "id = " + req.params.id;
 
-  burger.delete(condition, result => {
+  drink.delete(condition, result => {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

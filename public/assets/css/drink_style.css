@@ -5,7 +5,7 @@ body {
     background-color: rgb(251, 251, 251);
 }
 
-#burger{
+#drink{
     background-color: #FDCA21;
     width: 400px;
     height: 44px;
@@ -40,7 +40,7 @@ body {
 
 
 /* Lists */
-.burger-list {
+.drink-list {
         /*display: flex;
         */
     justify-content: space-between;
@@ -67,7 +67,7 @@ body {
     
 }
 
-.devoured-burgers {
+.devoured-drinks {
     /* background-color: white; */
     margin: 0px 20px;
     padding: 30px 40px;
@@ -119,6 +119,6 @@ textarea {
     border-radius: 5px;
 }
 
-.delete-burger{
+.delete-drink{
     background-color: aqua;
 }

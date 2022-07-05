@@ -1,18 +1,18 @@
-DROP DATABASE IF EXISTS burgers_DB;
-CREATE DATABASE burgers_DB;
-USE burgers_DB;
+DROP DATABASE IF EXISTS drinks_DB;
+CREATE DATABASE drinks_DB;
+USE drinks_DB;
 
-CREATE TABLE burgers (
+CREATE TABLE drinks (
   id INTEGER NOT NULL AUTO_INCREMENT,
-  burger_name VARCHAR(100) NOT NULL,
+  drink_name VARCHAR(100) NOT NULL,
   devoured BOOLEAN,
   PRIMARY KEY (id)
 );
 
-INSERT INTO burgers (burger_name, devoured) 
+INSERT INTO drinks (drink_name, devoured) 
 VALUES 
-("Black Bean Burger", false),
-("Portobello Mushroom Burger", true),
-("Sloppy Joe", false);
+("drink 1", false),
+("drink 2", true),
+("drink 3", false);
 
-SELECT * FROM burgers;
+SELECT * FROM drinks;
