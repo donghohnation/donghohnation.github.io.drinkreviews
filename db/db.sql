@@ -11,8 +11,8 @@ CREATE TABLE drinks (
 
 INSERT INTO drinks (drink_name, tried) 
 VALUES 
-("drink 1", false),
-("drink 2", true),
-("drink 3", false);
+("Hennesy", false),
+("Johnnie Walker Blue Label", true),
+("Macallan Sherry Oak", false);
 
 SELECT * FROM drinks;
