@@ -1,0 +1,49 @@
+<div class="container1">
+  <h1>Do you like your drink?</h1>
+  <h3>Keep track of the drinks you like</h3>
+</div>
+
+<div class="container2">
+  <h2>Add a Burger</h2>
+  <h4>Enter a burger you'd like to eat, and click submit</h4>
+  <form class="create-form">
+
+    <p>Burger Name:</p>
+    <div class="form-group">
+      <textarea type="text" id="burger" rows="4" name="name" placeholder="WHATS YOUR DRINK"></textarea>
+    </div>
+
+    <button type="submit" class="form-button">Add My Drink</button>
+  </form>
+</div>
+
+<div class="burger-list">
+  {{!-- If devoured returns a falsy value (ie, not yet devoured), Handlebars WILL render burger-block partial, setting devoured to false. 
+Otherwise, it will render nothing. --}}
+  <div class="not-devoured">
+    <h2>Order Here</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="devoured-burgers">
+    <h2>Devoured Burgers</h2>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  </div>
+
+
+  {{!-- If devoured is true (eaten), it will render --}}
+  {{!-- <div class="devoured-burgers">
+    
+</div> --}}
