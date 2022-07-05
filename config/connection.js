@@ -1,5 +1,5 @@
 // Set up connection from Node to MySQL and export the connection
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 let connection;
 
@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "chickenrecipe123",
+    password: "Hfwa0312",
     database: "drinks_DB"
   })
 };
