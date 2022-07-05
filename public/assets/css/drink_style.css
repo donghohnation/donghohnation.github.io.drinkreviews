@@ -6,13 +6,33 @@ body {
 }
 
 #drink{
-    background-color: #FDCA21;
+    background-color: #ffd3aa;
+    border: .5px solid #ff682c;
     width: 400px;
     height: 44px;
     text-align: center;
     color: rgb(0, 0, 0);
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#drink:hover {
+    background-color: rgb(255, 169, 135);
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+#drink:focus {
+    background-color: rgb(34, 34, 34);
+    color: white;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
 }
 
 .container1 {
@@ -109,11 +129,39 @@ button {
 .change-tried, .form-button {
     background-color: #000000;
     color: rgb(254, 254, 254);
+    padding: 11px;
+}
+
+.change-tried:hover {
+    cursor: pointer;
+    color: rgb(32, 78, 157);
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    background-color: rgb(186, 255, 146);
+    filter: drop-shadow(0px .4px 2px #20ab92);
+}
+
+.form-button:hover {
+    cursor: pointer;
+    color: rgb(157, 32, 32);
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    background-color: rgb(186, 255, 146);
+    filter: drop-shadow(0px .4px 2px #20ab92);
 }
 
 .form-button {
     padding: 11px;
     margin: 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0bff06;
 }
 
 
@@ -125,4 +173,16 @@ textarea {
 
 .delete-drink{
     background-color: rgb(75, 91, 170);
+    padding: 11px;
+}
+
+.delete-drink:hover {
+    cursor: pointer;
+    color: rgb(30, 255, 0);
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    background-color: rgb(255, 20, 20);
 }
