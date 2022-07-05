@@ -1,11 +1,11 @@
 <div class="container1">
-  <h1>Do you like your drink?</h1>
+  <h1>So you like your drink?</h1>
   <h3>Keep track of the drinks you like</h3>
 </div>
 
 <div class="container2">
   <h2>Add a drink</h2>
-  <h4>Enter a drink you'd like to eat, and click submit</h4>
+  <h4>What drink would you like to try?</h4>
   <form class="create-form">
 
     <p>Drink Name:</p>
@@ -18,24 +18,24 @@
 </div>
 
 <div class="drink-list">
-  {{!-- If devoured returns a falsy value (ie, not yet devoured), Handlebars WILL render drink-block partial, setting devoured to false. 
+  {{!-- If tried returns a falsy value (ie, not yet tried), Handlebars WILL render drink-block partial, setting tried to false. 
 Otherwise, it will render nothing. --}}
-  <div class="not-devoured">
+  <div class="not-tried">
     <h2>Order Here</h2>
     <ul>
       {{#each drinks}}
-      {{#unless devoured}}
-      {{> drinks/drink-block devoured=false}}
+      {{#unless tried}}
+      {{> drinks/drink-block tried=false}}
       {{/unless}}
       {{/each}}
     </ul>
   </div>
-  <div class="devoured-drinks">
-    <h2>Devoured Drinks</h2>
+  <div class="tried-drinks">
+    <h2>Tried Drinks</h2>
     <ul>
       {{#each drinks}}
-      {{#if devoured}}
-      {{> drinks/drink-block devoured=true}}
+      {{#if tried}}
+      {{> drinks/drink-block tried=true}}
       {{/if}}
       {{/each}}
     </ul>
@@ -43,7 +43,7 @@ Otherwise, it will render nothing. --}}
   </div>
 
 
-  {{!-- If devoured is true (eaten), it will render --}}
-  {{!-- <div class="devoured-drinks">
+  {{!-- If tried is true (eaten), it will render --}}
+  {{!-- <div class="tried-drinks">
     
 </div> --}}

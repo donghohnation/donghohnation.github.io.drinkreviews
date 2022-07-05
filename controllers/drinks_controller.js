@@ -20,9 +20,9 @@ router.get("/", (req, res) => {
 router.post("/api/drinks", (req, res) => {
   console.log("New drink POST request: ", req.body);
   // Column names
-  drink.create(["drink_name", "devoured"],
+  drink.create(["drink_name", "tried"],
     // Properties from object in POST
-    [req.body.drink_name, req.body.devoured], result => {
+    [req.body.drink_name, req.body.tried], result => {
       // Send back the ID of the new drink
       res.json({ id: result.insertId });
     });
@@ -35,7 +35,7 @@ router.put("/api/drinks/:id", (req, res) => {
   console.log("UPDATE drink WHERE condition: ", condition);
 
   drink.update({
-    devoured: req.body.devoured
+    tried: req.body.tried
   }, condition, result => {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

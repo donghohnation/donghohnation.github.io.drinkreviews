@@ -8,8 +8,8 @@ $(function () {
         let newDrink = {
             // Value for drink_name column is id="drink" textarea
             drink_name: $("#drink").val().trim(),
-            // Default devoured to false
-            devoured: 0
+            // Default tried to false
+            tried: 0
         };
 
         // Send the POST request.
@@ -25,17 +25,17 @@ $(function () {
         );
     });
 
-    // DEVOURED or EAT ME! button
-    $(".change-devoured").on("click", function (event) {
+    // TRIED or DRINK ME button
+    $(".change-tried").on("click", function (event) {
         let id = $(this).data("id");
         console.log(id);
-        // Return value for data-devoured
-        let newDrink = $(this).data("devoured");
+        // Return value for data-tried
+        let newDrink = $(this).data("tried");
         console.log("Current drink state: ", newDrink);
 
-        // Change to opposite devoured state
+        // Change to opposite tried state
         let newDrinkState = {
-            devoured: !newDrink
+            tried: !newDrink
         };
 
         // Send the PUT request.
@@ -44,7 +44,7 @@ $(function () {
             data: newDrinkState
         }).then(
             function () {
-                console.log("Changed devoured to", newDrinkState);
+                console.log("Changed tried to", newDrinkState);
                 // Reload the page to get the updated list
                 location.reload();
             }

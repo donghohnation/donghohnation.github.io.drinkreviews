@@ -5,11 +5,11 @@ USE drinks_DB;
 CREATE TABLE drinks (
   id INTEGER NOT NULL AUTO_INCREMENT,
   drink_name VARCHAR(100) NOT NULL,
-  devoured BOOLEAN,
+  tried BOOLEAN,
   PRIMARY KEY (id)
 );
 
-INSERT INTO drinks (drink_name, devoured) 
+INSERT INTO drinks (drink_name, tried) 
 VALUES 
 ("drink 1", false),
 ("drink 2", true),

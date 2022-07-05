@@ -27,7 +27,7 @@ const objToSql = ob => {
         value = "'" + value + "'";
       }
       // e.g. {name: 'drink 1'} => ["name='drink 1'"]
-      // e.g. {devoured: true} => ["devoured=true"]
+      // e.g. {tried: true} => ["tried=true"]
       arr.push(key + "=" + value);
     }
   }
@@ -67,7 +67,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {drink_name: panther, devoured: true}
+  // An example of objColVals would be {drink_name: panther, tried: true}
   update: (table, objColVals, condition, cb) => {
     var queryString = "UPDATE " + table;
 
