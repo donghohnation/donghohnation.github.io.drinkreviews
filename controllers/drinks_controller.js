@@ -62,5 +62,5 @@ router.delete("/api/drinks/:id", (req, res) => {
 // Redirect to root if no routes match
 router.get("*", (req, res) => { res.redirect('/') });
 
-// Export routes for server.js to use.
+// Export routes for server.js.
 module.exports = router;

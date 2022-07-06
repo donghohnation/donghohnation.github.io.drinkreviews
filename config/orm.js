@@ -100,5 +100,5 @@ const orm = {
   }
 };
 
-// Export the orm object for the model (drink_model.js).
+// Export the orm object for the model(drink_model.js).
 module.exports = orm;
