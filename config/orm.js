@@ -1,3 +1,4 @@
+//import mysql and export orm
 const connection = require('../config/connection.js');
 
 const printQuestionMarks = num => {
@@ -10,6 +11,7 @@ const printQuestionMarks = num => {
   return arr.toString();
 }
 
+//function to convert object pairs to sql 
 const objToSql = ob => {
   let arr = [];
 
@@ -19,12 +21,14 @@ const objToSql = ob => {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
+      //naming convention
       arr.push(key + "=" + value);
     }
   }
   return arr.toString();
 }
 
+//obj for sql functions
 const orm = {
   all: (tableInput, cb) => {
     let queryString = "SELECT * FROM " + tableInput + ";";
@@ -55,6 +59,7 @@ const orm = {
       cb(result);
     });
   },
+  // example would be drink_name: hennessy, tried: true
   update: (table, objColVals, condition, cb) => {
     var queryString = "UPDATE " + table;
 
@@ -87,4 +92,6 @@ const orm = {
   }
 };
 
+
+//export orm
 module.exports = orm;

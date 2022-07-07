@@ -1,12 +1,16 @@
 const express = require("express");
 
+// app router creation
 const router = express.Router();
 
 const drink = require("../models/drink_model.js");
 
+// create routes 
 router.get("/", (req, res) => {
 
   drink.all(data => {
+
+    //using database results from index.handlebar
     res.render("index", { drinks: data });
 
   });
@@ -14,6 +18,7 @@ router.get("/", (req, res) => {
 
 router.post("/api/drinks", (req, res) => {
   console.log("New drink POST request: ", req.body);
+  // names assigned to columns
   drink.create(["drink_name", "tried"],
     [req.body.drink_name, req.body.tried], result => {
       res.json({ id: result.insertId });

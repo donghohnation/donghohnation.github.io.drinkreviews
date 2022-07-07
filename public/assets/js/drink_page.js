@@ -1,9 +1,13 @@
 $(function () {
+
+    //create and add
     $(".create").on("submit", function(event) {
         event.preventDefault();
 
         let newDrink = {
+            //value for drink_name
             drink_name: $("#drink").val().trim(),
+            //default is false
             tried: 0
         };
 
@@ -18,9 +22,11 @@ $(function () {
         );
     });
 
+    //try button
     $(".triiied").on("click", function (event) {
         let id = $(this).data("id");
         console.log(id);
+        
         let newDrink = $(this).data("tried");
         console.log("Current drink state: ", newDrink);
         let newDrinkState = {
@@ -38,6 +44,7 @@ $(function () {
         );
     });
 
+    //delete button
     $(".delete-drink").on("click", function(event) {
         let id = $(this).data("id");
     
