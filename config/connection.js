@@ -1,4 +1,4 @@
-// // connect from node to mysql
+// connect from node to mysql
 // const mysql = require('mysql');
 
 // let connection;
@@ -23,15 +23,16 @@
 //   }
 //   console.log("you are id " + connection.threadId);
 // });
-let sequelize;
+
+let connection;
 
 if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+  connection = new Sequelize(process.env.JAWSDB_URL);
 } else {
-  sequelize = new Sequelize(
-    process.env.DRINKS_DB,
-    process.env.ROOT,
-    process.env.CHICKENRECIPE123,
+  connection = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW,
     {
       host: 'localhost',
       dialect: 'mysql',
