@@ -1,8 +1,5 @@
-// Import MySQL connection and export ORM object to handle all database functions
 const connection = require('../config/connection.js');
 
-// Helper function for SQL syntax
-// The  helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string "?,?,?" based on the incoming MySQL query
 const printQuestionMarks = num => {
   let arr = [];
 
@@ -13,29 +10,21 @@ const printQuestionMarks = num => {
   return arr.toString();
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
 const objToSql = ob => {
   let arr = [];
 
-  // loop through the keys and push the key/value as a string int arr
   for (var key in ob) {
     let value = ob[key];
-    // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (drink 1 => 'drink 1')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'drink 1'} => ["name='drink 1'"]
-      // e.g. {tried: true} => ["tried=true"]
       arr.push(key + "=" + value);
     }
   }
-  // translate array of strings to a single comma-separated string
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
 const orm = {
   all: (tableInput, cb) => {
     let queryString = "SELECT * FROM " + tableInput + ";";
@@ -43,7 +32,6 @@ const orm = {
       if (err) {
         throw err;
       }
-      // Returns db result in callback
       cb(result);
     });
   },
@@ -67,7 +55,6 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {drink_name: panther, tried: true}
   update: (table, objColVals, condition, cb) => {
     var queryString = "UPDATE " + table;
 
@@ -100,5 +87,4 @@ const orm = {
   }
 };
 
-// Export the orm object for the model(drink_model.js).
 module.exports = orm;
