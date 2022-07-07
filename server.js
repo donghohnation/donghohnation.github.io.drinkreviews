@@ -24,5 +24,5 @@ app.use(routes);
 
 // start server
 app.listen(PORT, () => {
-  console.log("Server: http://localhost:" + PORT);
+  console.log("Click here to view: http://localhost:" + PORT);
 });
