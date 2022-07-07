@@ -1,6 +1,6 @@
 This application utilizes:
   -MySQL
-  -Node.js
+  -Node.js-
   -Express
   -Sequelize ORM
   -Handlebars.js

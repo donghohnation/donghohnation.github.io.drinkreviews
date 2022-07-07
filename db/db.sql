@@ -13,6 +13,8 @@ INSERT INTO drinks (drink_name, tried)
 VALUES 
 ("Hennesy", false),
 ("Johnnie Walker Blue Label", true),
-("Macallan Sherry Oak", false);
+("Macallan Sherry Oak", false),
+("Don Julio 1942", true),
+("Chum Churum Soju", false);
 
 SELECT * FROM drinks;
