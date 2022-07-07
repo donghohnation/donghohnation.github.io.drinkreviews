@@ -15,6 +15,10 @@ VALUES
 ("Johnnie Walker Blue Label", true),
 ("Macallan Sherry Oak", false),
 ("Don Julio 1942", true),
-("Chum Churum Soju", false);
+("Chum Churum Soju", false),
+("Junmai Ginjo Sake", false),
+("Captain Morgan", false),
+("Adios MF", false),
+
 
 SELECT * FROM drinks;

@@ -4,6 +4,63 @@ body {
     background-color: rgb(251, 251, 251);
 }
 
+#maintitle {
+    font-size: 133px;
+    margin-top: -12px;
+    margin-bottom: -32px;
+    margin-left: 20px;
+    font-family: 'Bebas Neue', cursive;
+    color: #ffffff;
+    font-weight: 400;
+    filter: drop-shadow(0px 0px 4px #4d4a4a64);
+}
+
+.header1 {
+        padding: 30px;
+        margin-left: -40px;
+        margin-right: -40px;
+        margin-top: -40px;
+        background: linear-gradient(#cbcbde 0%, #ada5b8 100%);
+        filter: drop-shadow(0px 0px 5px #8181813d);
+        -webkit-filter: drop-shadow(0px 0px 5px #8181813d);
+        border-bottom: 2px solid #584e69;
+}
+
+.nav a {
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    color: rgb(103, 99, 119);
+    /* background-color: #0bff06;
+    padding: 11px; */
+}
+
+.nav a:hover {
+    background-color: rgb(72, 72, 72);
+    color: antiquewhite;
+    transition: all .2s ease;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 3px;
+}
+
+.main-nav {
+    margin-left: -20px;
+    margin-bottom: -50px;
+    /* text-align: right;
+    margin-right: 20px;
+    margin-top: -128px;
+    font-weight: 600; */
+}
+
+.main-nav li {
+    padding: 0 1%;
+}
+
+.nav li {
+    display: inline;
+}
+
 #drink{
     background-color: #ffd3aa;
     border: .5px solid #ff682c;
@@ -35,7 +92,7 @@ body {
 }
 
 .d1 {
-    margin: 5px 20px;
+    margin: 53px 20px;
     border-radius: 10px;
     padding: 30px 40px;
     color: rgb(0, 0, 0);
